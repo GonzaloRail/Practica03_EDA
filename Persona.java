@@ -40,10 +40,6 @@ public class Persona implements Comparable<Persona> {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad=" + edad +
-                '}';
+        return "nombre: " + nombre + "\t\t apellido: " + apellido +"\t\t edad: " + edad;
     }
 }
