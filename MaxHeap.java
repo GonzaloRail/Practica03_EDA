@@ -54,18 +54,21 @@ import java.util.ArrayList;
         }
 
         private void heapifyDown(int index) {
-            int leftChildIndex = 2 * index + 1;
-            int rightChildIndex = 2 * index + 2;
-            int largestIndex = index;
+            int leftChildIndex = 2 * index + 1;  // Calcula el índice del hijo izquierdo
+            int rightChildIndex = 2 * index + 2;  // Calcula el índice del hijo derecho
+            int largestIndex = index;  // Inicialmente, asume que el nodo actual es el más grande
 
+            // Comprueba si el hijo izquierdo existe y si es mayor que el nodo actual
             if (leftChildIndex < heap.size() && heap.get(leftChildIndex).compareTo(heap.get(largestIndex)) > 0) {
-                largestIndex = leftChildIndex;
+                largestIndex = leftChildIndex;  // Actualiza el índice del nodo más grande
             }
 
+            // Comprueba si el hijo derecho existe y si es mayor que el nodo actual o el hijo izquierdo
             if (rightChildIndex < heap.size() && heap.get(rightChildIndex).compareTo(heap.get(largestIndex)) > 0) {
-                largestIndex = rightChildIndex;
+                largestIndex = rightChildIndex;  // Actualiza el índice del nodo más grande
             }
 
+            // Si el índice del nodo más grande ha cambiado, intercambia el nodo actual con el nodo más grande y realiza heapifyDown en el nuevo índice
             if (largestIndex != index) {
                 swap(index, largestIndex);
                 heapifyDown(largestIndex);
